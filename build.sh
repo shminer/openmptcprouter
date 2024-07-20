@@ -229,6 +229,7 @@ cat > "$OMR_TARGET/${OMR_KERNEL}/source/feeds.conf" <<EOF
 src-link packages $(readlink -f feeds/${OMR_KERNEL}/packages)
 src-link luci $(readlink -f feeds/${OMR_KERNEL}/luci)
 src-link openmptcprouter $(readlink -f "$OMR_FEED")
+src-git 5g https://github.com/shminer/5G-Modem-Support.git;main
 EOF
 
 if [ -n "$CUSTOM_FEED" ]; then
@@ -981,6 +982,7 @@ if [ -n "$CUSTOM_FEED" ]; then
 	scripts/feeds install -a -d y -f -p ${OMR_DIST}
 else
 	scripts/feeds install -a -d y -f -p openmptcprouter
+	scripts/feeds install -a -d y -f -p 5g
 fi
 # Use iproute2 package from the normal repo for 5.4
 if [ "$OMR_KERNEL" = "5.4" ]; then
