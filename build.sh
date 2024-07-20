@@ -270,7 +270,7 @@ fi
 #EOF
 
 if [ -f $OMR_TARGET_CONFIG ]; then
-	cat "$OMR_TARGET_CONFIG" config -> "$OMR_TARGET/${OMR_KERNEL}/source/.config" <<-EOF
+	cat config-5g "$OMR_TARGET_CONFIG" config -> "$OMR_TARGET/${OMR_KERNEL}/source/.config" <<-EOF
 	CONFIG_IMAGEOPT=y
 	CONFIG_VERSIONOPT=y
 	CONFIG_VERSION_DIST="$OMR_DIST"
